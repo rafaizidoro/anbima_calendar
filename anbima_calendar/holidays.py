@@ -85,4 +85,18 @@ HOLIDAYS = {
         "Proclamação da República": date(2025, 11, 15),
         "Natal": date(2025, 12, 25),
     },
+    "2026": {
+        "Confraternização Universal": date(2026, 1, 1),
+        "Carnaval 1": date(2026, 2, 16),
+        "Carnaval 2": date(2026, 2, 17),
+        "Paixão de Cristo": date(2026, 4, 3),
+        "Tiradentes": date(2026, 4, 21),
+        "Dia do Trabalho": date(2026, 5, 1),
+        "Corpus Christi": date(2026, 6, 19),
+        "Independência do Brasil": date(2026, 9, 7),
+        "Nossa Sr.a Aparecida - Padroeira do Brasil": date(2026, 10, 12),
+        "Finados": date(2026, 11, 2),
+        "Proclamação da República": date(2026, 11, 15),
+        "Natal": date(2026, 12, 25),
+    },
 }
