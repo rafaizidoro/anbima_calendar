@@ -8,7 +8,7 @@ setuptools.setup(
     author_email="tecnologia@rispar.com.br",
     url="https://github.com/risparfinance/anbima_calendar",
     name="anbima_calendar",
-    version="0.0.1",
+    version="0.0.2",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
     package_data={"anbima_calendar": ["LICENSE"]},
     include_package_data=True,

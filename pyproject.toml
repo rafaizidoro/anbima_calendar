@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anbima_calendar"
-version = "0.0.1"
+version = "0.0.2"
 description = "Helper functions to handle banking holidays in Brazil"
 authors = ["Rispar <tecnologia@rispar.com.br>"]
 license = "MIT"
