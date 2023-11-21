@@ -1,4 +1,6 @@
-# Anbima Calendar
+Anbima Calendar 🏦 📆 
+=======================
+![anbima-calendar](https://github.com/rizidoro/anbima_calendar/assets/13101/4aead264-4ab0-410e-a232-200fec9e7afa)
 
 ## Introduction
 **Anbima Calendar** is a Python library designed to simplify handling banking holidays specific to Brazil. **ANBIMA (Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais)**, the Brazilian Financial and Capital Markets Association, plays a crucial role in the development of financial markets in Brazil. This library provides a robust set of tools for determining business days, calculating due dates, and identifying holidays based on the official holiday calendar published by ANBIMA.
