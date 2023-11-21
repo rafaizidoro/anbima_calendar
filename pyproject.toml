@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "anbima_calendar"
-version = "0.1.0"
+version = "0.1.1"
 description = "Helper functions to handle banking holidays in Brazil"
 authors = ["Rafael Izidoro <izidoro.me@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://anbima-calendar.readthedocs.io/en/latest/"
+documentation = "https://anbima-calendar.readthedocs.io/en/latest/"
+repository = "https://github.com/rizidoro/anbima_calendar"
 
 [tool.poetry.dependencies]
 python = "^3.11"
