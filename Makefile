@@ -6,26 +6,53 @@
 #	test:      run project tests
 #
 
-PROJECT_PATH := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
-CURRENT_PATH := $(shell pwd)
+PROJECT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+PYTHONPATH := $(PROJECT_DIR)
 
-ifneq ($(PROJECT_PATH),$(CURRENT_PATH))
-$(error 'You need to be inside the projects root directory')
-endif
+.PHONY: lint test format isort black clean docs
 
+# Check code style
+lint:
+	poetry run flake8 anbima_calendar
 
-.PHONY: test isort black lint
-
+# Run tests
 test:
-	@export PYTHONPATH=$(PROJECT_PATH) && \
-		poetry run pytest -v -x -p no:warnings --cov-report html --cov=$(PROJECT_PATH)
+	poetry run pytest -v --cov=anbima_calendar
 
+# Format code
+format: isort black
+
+# Sort imports
 isort:
-	@echo 'Running isort...'
-	@poetry run isort -rc $(PROJECT_PATH)/anbima_calendar
+	poetry run isort anbima_calendar
 
+# Format code with Black
 black:
-	@echo 'Running black...'
-	@poetry run black $(PROJECT_PATH)/anbima_calendar
+	poetry run black anbima_calendar
 
-lint: isort black
+# Clean up files
+clean:
+	find . -type f -name '*.pyc' -delete
+	find . -type d -name '__pycache__' -delete
+	rm -rf .pytest_cache
+
+# Generate documentation
+docs:
+	cd docs && make html
+
+rundocs: docs
+	cd docs && make serve
+
+exportcode:
+	@find anbima_calendar -type f \
+		! -path '*/__pycache__*'  \
+		! -path '*/.pytest_cache*' \
+		! -path './.venv*' \
+		! -path './.git*' \
+		! -name 'poetry.lock' \
+		! -name '*.sh' \
+		! -name '*.md' \
+		! -name 'code.txt' \
+		! -name '.DS_Store' \
+		| xargs -I {} sh -c 'echo "### file: {}"; if [ -s {} ]; then cat {}; else echo "NO CONTENT"; fi; echo "\n"' \
+		> code.txt
