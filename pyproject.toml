@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Helper functions to handle banking holidays in Brazil"
 authors = ["Rafael Izidoro <izidoro.me@gmail.com>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
