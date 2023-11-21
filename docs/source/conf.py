@@ -15,6 +15,7 @@ extensions = ["sphinx.ext.autodoc"]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+html_baseurl = "https://rizidoro.github.io/anbima_calendar/"
 
 
 # -- Options for HTML output -------------------------------------------------
